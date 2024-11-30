@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Text Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-container">
+        <nav class="navbar">
+            <img src="logo.png" alt="logo"/>
+        </nav>
+        <div class="editor">
+            <div class="toolbar">
+                <button onclick="document.execCommand('undo')" title="Undo">
+                    <img src="icons8-undo-30.png" alt="Undo" />
+                </button>
+                <button onclick="document.execCommand('redo')" title="Redo">
+                    <img src="icons8-redo-30.png" alt="Redo" />
+                </button>
+                <select onchange="changeFontStyle(this.value)">
+                    <option value="">Font Style</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Verdana">Verdana</option>
+                </select>
+                <select onchange="changeFontSize(this.value)">
+                    <option value="">Font Size</option>
+                    <option value="12px">12px</option>
+                    <option value="16px">16px</option>
+                    <option value="20px">20px</option>
+                    <option value="24px">24px</option>
+                    <option value="32px">32px</option>
+                </select>
+                <button onclick="document.execCommand('bold')">Bold</button>
+                <button onclick="document.execCommand('italic')">Italic</button>
+                <button onclick="document.execCommand('underline')">Underline</button>
+                <select onchange="changeAlignment(this.value)">
+                    <option value="">Text Align</option>
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                    <option value="justify">Justify</option>
+                </select>
+            </div>
+            <div id="textbox" contenteditable="true" class="textbox">
+                Start typing here...
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
